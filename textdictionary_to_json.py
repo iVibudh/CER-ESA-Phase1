@@ -8,6 +8,7 @@ Created on Wed Nov 20 13:19:32 2019
 #store the content of 1321 text files in a dictionary with file name as key
 import os
 import json
+import pandas as pd
 
 #path_txt = "C:/Users/yazdsous/Desktop/Data/Text/"
 
@@ -24,7 +25,7 @@ for r, d, f in os.walk(path_txt):
                 textfiles[file] = txtfile.read().replace('\n', '')
 
 #write the data object (textfiles) to the "json_file" file
-with open('F:/Environmental Baseline Data/Version 2/Data/text_ESA.json', 'w') as json_file:
+with open('text_ESA.json', 'w') as json_file:
     json.dump(textfiles, json_file)
     
     
@@ -32,4 +33,11 @@ with open('F:/Environmental Baseline Data/Version 2/Data/text_ESA.json', 'w') as
 with open('text_ESA.json') as json_file:
     data = json.load(json_file)
     
-    
+
+
+##############################TEST###############################    
+os.getcwd()
+df = pd.DataFrame.from_dict(data,orient='index', columns=['A'])
+df1=df[0:10]
+x = df1.A[8]
+#################################################################
