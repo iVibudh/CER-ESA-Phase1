@@ -51,6 +51,7 @@ coverage.xml
 *.mo
 *.pot
 *vibudh.txt
+*nipun.txt
 # Django stuff:
 *.log
 local_settings.py
